@@ -53,13 +53,10 @@ app.get("/stream.awk", (req, res) => {
 const db = admin.firestore();
 
 app.get("/listen", (req, res) => {
-  console.log(req.query);
   if (!req.query.skipWelcome) {
-    console.log("Sending welcome")
     res.write("WelcomeBot|Welcome to WWW chat!|26|");
   }
 
-  console.log("Setting up listneer")
   const roomId = "default";
   db.collection(`chats/${roomId}/messages`)
     .orderBy("timestamp", "asc")
