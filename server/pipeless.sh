@@ -1,1 +1,0 @@
-stdbuf -oL ./stream.sh >  /tmp/bc.messagesfile
